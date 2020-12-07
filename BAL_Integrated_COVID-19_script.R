@@ -295,8 +295,8 @@ for (i in names(BAL.list_0)) {
 
 ## Homotypic Doublet Proportion Estimate -------------------------------------------------------------------------------------
   annotations = BAL.list_0[[i]]$seurat_clusters
-  homotypic.prop <- modelHomotypic(annotations)           ## ex: annotations <- seu_kidney@meta.data$ClusteringResults
-  nExp_poi <- round(0.075*length(colnames(BAL.list_0[[i]])))  ## Assuming 7.5% doublet formation rate - tailor for your dataset
+  homotypic.prop <- modelHomotypic(annotations)          
+  nExp_poi <- round(0.075*length(colnames(BAL.list_0[[i]])))  
   nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
 
 ## Run DoubletFinder with varying classification stringencies ----------------------------------------------------------------
